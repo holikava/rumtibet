@@ -1,0 +1,29 @@
+// button styles
+.btn {
+    cursor: pointer;
+    font-size: $fs-text;
+    padding: 1em 2em;
+    color: $clr-white;
+    background-color: $clr-secondary;
+    border: none;
+    border-radius: 3px;
+    @include transition(300ms);
+
+    &:hover {
+        background: darken($clr-secondary, 10%);
+    }
+}
+
+
+// sections heading
+.section-heading {
+    margin-bottom: 1em;
+
+    & > span {
+        display: inline-block;
+        color: $clr-primary;
+        font-family: $ff-subtext;
+        font-weight: $fw-light;
+        margin-bottom: 1em;
+    }
+}

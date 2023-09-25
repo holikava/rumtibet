@@ -1,4 +1,10 @@
-@import 'basic/basic';
 @import 'basic/colors';
 @import 'basic/typography';
+@import 'basic/basic';
 @import 'basic/breakpoints';
+@import 'basic/mixin';
+@import 'basic/components';
+
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/about-us';

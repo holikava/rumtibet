@@ -12,11 +12,11 @@
   }
 
   body {
+    font-size: $fs-text;
     font-family: $ff-text;
     font-weight: $fw-regular;
     line-height: 1.6;
-    font-size: $fs-text;
-    color: $clr-secondary;
+    color: $clr-black;
     overflow-x: hidden;
   }
 
@@ -66,4 +66,8 @@
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
+  }
+
+  section {
+    padding-block: 3em;
   }

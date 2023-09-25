@@ -16,7 +16,263 @@
 </head>
 
 <body>
-   
+
+    <header id="header">
+        <div class="container">
+            <nav class="navigation">
+                <div class="navigation__header">
+                    <div class="logo">
+                        <img src="./assets/icons/logo.png" alt="logo of travel agency">
+                        <a href="#header"><img src="./assets/icons/logo-text.png" alt="logo of travel agency"></a>
+                    </div>
+                    <div class="toggle-menu">
+                        <span class="toggle-icon"></span>
+                    </div>
+                </div>
+                <!-- navigation -->
+                <ul class="navigation__list">
+                    <li><a href="#" class="navigation__link">Главная</a></li>
+                    <li><a href="#" class="navigation__link">Про гида</a></li>
+                    <li><a href="#" class="navigation__link">Программа тура</a></li>
+                    <li><a href="#" class="navigation__link">Стоимость</a></li>
+                    <li><a href="#" class="navigation__link">Блог</a></li>
+                    <li><a href="#" class="navigation__link">Контакты</a></li>
+                    <button class="btn navigation__btn">Консультация</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Насладись прогулкой в горах с дружной командой</h1>
+                    <form action="" class="hero__search search">
+                        <div class="search__block">
+                            <input type="text" name="location" id="location" placeholder="Локация для тура"
+                                class="search__input">
+                            <label for="location" class="search__label">выберите из списка</label>
+                        </div>
+                        <div class="search__block">
+                            <input type="date" name="date" id="pickdate" placeholder="Дата похода"
+                                class="search__input">
+                            <label for="pickdate" class="search__label">укажите диапазон</label>
+                        </div>
+                        <div class="search__block">
+                            <input type="number" class="search__input" min="4" max="20" step="1" value="number"
+                                name="persons" id="persons" placeholder="Участники">
+                            <label for="persons" class="search__label">минимум 4 человека</label>
+                        </div>
+                        <button type="submit" class="btn hero__btn">Найти программу</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- about-us section -->
+        <section class="about-us">
+            <div class="container">
+                <div class="about-us__content">
+                    <div class="about-us__images">
+                        <img src="./assets/images/about-img-01.jpg" alt="mountains peaks">
+                        <img src="./assets/images/about-img-02.jpg" alt="shed in a mountains">
+                    </div>
+                    <div class="about-us__text">
+                        <div class="section-heading">
+                            <span>о нашем походе</span>
+                            <h2>Исследуйте все горные массивы мира вместе с нами</h2>
+                        </div>
+                        <p>
+                            Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
+                            тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат
+                            Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его
+                            поисками в классической латинской литературе.
+                        </p>
+                        <a href="#" class="btn">Программа тура</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- offers section -->
+        <section class="offers">
+            <div class="container">
+                <div class="offers__content">
+                    <div class="offers__text">
+                        <div class="section-heading">
+                            <span>наше предложение</span>
+                            <h2>Лучшие программы для тебя</h2>
+                        </div>
+                        <p>
+                            Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
+                            тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа.
+                        </p>
+                        <div class="offers__pluses">
+                            <div class="offers__plus">
+                                <img src="./assets/icons/offers-icon-1.png" alt="Опытный гид">
+                                <h4>Опытный гид</h4>
+                                <p>
+                                    Для современного мира базовый вектор развития предполагает независимые способы
+                                    реализации соответствующих условий активизации.
+                                </p>
+                            </div>
+                            <div class="offers__plus">
+                                <img src="./assets/icons/offers-icon-2.png" alt="Безопасный поход">
+                                <h4>Безопасный поход</h4>
+                                <p>
+                                    Для современного мира базовый вектор развития предполагает независимые способы
+                                    реализации соответствующих условий активизации.
+                                </p>
+                            </div>
+                            <div class="offers__plus">
+                                <img src="./assets/icons/offers-icon-3.png" alt="Лояльные цены">
+                                <h4>Лояльные цены</h4>
+                                <p>
+                                    Для современного мира базовый вектор развития предполагает независимые способы
+                                    реализации соответствующих условий активизации.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn">Стоимость программ</a>
+                    </div>
+                    <div class="offers__images">
+                        <img src="./assets/images/offers-img-01.png" alt="beautiful veiw">
+                        <img src="./assets/images/offers-img-02.png" alt="beautiful veiw">
+                        <img src="./assets/images/offers-img-03.png" alt="beautiful veiw">
+                        <img src="./assets/images/offers-img-04.png" alt="beautiful veiw">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- tours section -->
+        <section class="popular-tours">
+            <div class="container">
+                <div class="popular-tours__content">
+                    <div class="section-heading">
+                        <span>по версии отдыхающих</span>
+                        <h2>Популярные направления</h2>
+                    </div>
+                    <div class="popular-tours__cards">
+                        <div class="card">
+                            <img src="./assets/images/popular-tours-01.png" alt="">
+                            <div class="card__info">
+                                <h4>Озеро возле гор</h4>
+                                <span>романтическое приключение</span>
+                                <span class="price">480$</span>
+                            </div>
+                        </div>
+                        <!-- add other cards with javascript -->
+                    </div>
+                    <a href="#" class="btn">Рейтинг направлений</a>
+                </div>
+            </div>
+        </section>
+        <!-- blog section -->
+        <section class="blog">
+            <div class="container">
+                <div class="blog__content">
+                    <div class="section-heading">
+                        <span>делимся впечатлениями</span>
+                        <h2>Блог о путешествиях</h2>
+                    </div>
+                    <div class="blog__posts">
+                        <article class="post">
+                            <div class="post__img">
+                                <img src="./assets/images/post-img-01.jpg" alt="beautiful veiw">
+                            </div>
+                            <div class="post__info">
+                                <h4>Красивая Италя, какая она в реальности?</h4>
+                                <p>Для современного мира базовый вектор развития предполагает независимые способы
+                                    реализации соответствующих условий активизации.
+                                </p>
+                                <span class="post__date">01/04/2023</span>
+                                <a href="#" class="post__link">читать статью</a>
+                            </div>
+                        </article>
+                        <!-- add other article with js -->
+                    </div>
+                    <a href="#" class="btn">Другие материалы</a>
+                </div>
+            </div>
+        </section>
+        <!-- gallery section -->
+        <section class="gallery">
+            <div class="container">
+                <div class="heading-section">
+                    <span>фото-отчет</span>
+                    <h2>Делимся впечатлениями</h2>
+                </div>
+                <div class="gallery__block">
+                    <img src="./assets/images/gallery-01.jpg" alt="beautiful view">
+                    <img src="./assets/images/gallery-02.jpg" alt="beautiful view">
+                    <img src="./assets/images/gallery-03.jpg" alt="beautiful view">
+                    <img src="./assets/images/gallery-04.jpg" alt="beautiful view">
+                    <img src="./assets/images/gallery-05.jpg" alt="beautiful view">
+                    <img src="./assets/images/gallery-06.jpg" alt="beautiful view">
+                </div>
+                <a href="#" class="btn">Наш pinterest</a>
+            </div>
+        </section>
+        <!-- subscribe section -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscribe__content">
+                    <div class="heading-section">
+                        <span>актуально</span>
+                        <h2>Получайте полезные рассылки о путешествиях</h2>
+                    </div>
+                    <form action="" class="subscribe__form">
+                        <label for="subscribe__input">Введите e-mail адрес</label>
+                        <fieldset>
+                            <input type="email" name="email" id="subscribe__input">
+                            <button type="submit" class="btn">Подписаться на новости</button>
+                        </fieldset>
+                        <span>подписываясь на новости, вы автоматически соглашаетесь с условиями обработки персональных
+                            данных и правилами рекламных рассылок</span>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3>Компания «РумТибет»</h3>
+                    <p>
+                        Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух
+                        тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney.
+                    </p>
+                    <a href="mailto:info@domain.com">info@domain.com</a>
+                    <a href="tel:+71234567890">+7 (123) 456-78-90</a>
+                    <div class="footer__social-links">
+                        <a href="#"><img src="./assets/icons/vk-icon.png" alt="vkontakte"></a>
+                        <a href="#"><img src="./assets/icons/telegram-icon.png" alt="telegram"></a>
+                        <a href="#"><img src="./assets/icons/pinterest-icon.png" alt="pinterest"></a>
+                        <a href="#"><img src="./assets/icons/skype-icon.png" alt="skype"></a>
+                    </div>
+                </div>
+                <div class="footer__links-services">
+                    <h3>Наши услуги</h3>
+                    <ul>
+                        <li><a href="#">Прогулки в горы летом</a></li>
+                        <li><a href="#">Зимние походы в горы</a></li>
+                        <li><a href="#">Посещение храмов в горах</a></li>
+                        <li><a href="#">Экстремальные виды туризма</a></li>
+                        <li><a href="#">Походы в джунглях Амазонии</a></li>
+                        <li><a href="#">Поездка в Африку</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links-topicks">
+                    <h3>Важно для путешествий</h3>
+                    <ul>
+                        <li><a href="#">Как собрать в долгий поход?</a></li>
+                        <li><a href="#">Жизненно важные предметы для похода</a></li>
+                        <li><a href="#">Медицинская страховка, гарантии безопасности</a></li>
+                        <li><a href="#">Если вы врач - загляните сюда</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
