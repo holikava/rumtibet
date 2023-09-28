@@ -17,13 +17,13 @@
 
 // sections heading
 .section-heading {
-    margin-bottom: 1em;
+    margin-bottom: 2rem;
 
     & > span {
         display: inline-block;
         color: $clr-primary;
         font-family: $ff-subtext;
         font-weight: $fw-light;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
     }
 }

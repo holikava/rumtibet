@@ -1,0 +1,51 @@
+.blog {
+    background-color: $clr-gray-light;
+
+    &__posts {
+        @include flex(row);
+    }
+
+    &__btn {
+        text-align: center;
+    }
+}
+
+.post {
+    flex-basis: 80%;
+    margin-bottom: 2em;
+
+    &__img > img {
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    &__info {
+        padding: 1em;
+        background-color: $clr-white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    &__title {
+        margin-bottom: 1em;
+    }
+
+    &__text {
+        line-height: 1.4;
+    }
+
+    &__footer {
+        @include flex(row);
+        margin-top: 1em;
+    }
+
+    &__date {
+        color: $clr-primary;
+    }
+
+    &__link {
+        color: $clr-black;
+    }
+
+}

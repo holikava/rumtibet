@@ -46,7 +46,7 @@
         <section class="hero">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Насладись прогулкой в горах с дружной командой</h1>
+                    <h1 class="hero__title">Насладись прогулкой в горах с надежной командой</h1>
                     <form action="" class="hero__search search">
                         <div class="search__block">
                             <input type="text" name="location" id="location" placeholder="Локация для тура"
@@ -73,7 +73,9 @@
             <div class="container">
                 <div class="about-us__content">
                     <div class="about-us__images">
-                        <img src="./assets/images/about-img-01.jpg" alt="mountains peaks">
+                        <div class="about-us__video">
+                            <img src="./assets/images/about-img-01.jpg" alt="mountains peaks">
+                        </div>
                         <img src="./assets/images/about-img-02.jpg" alt="shed in a mountains">
                     </div>
                     <div class="about-us__text">
@@ -87,7 +89,9 @@
                             Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его
                             поисками в классической латинской литературе.
                         </p>
-                        <a href="#" class="btn">Программа тура</a>
+                        <div class="about-us__btn">
+                            <a href="#" class="btn">Программа тура</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,31 +111,45 @@
                         </p>
                         <div class="offers__pluses">
                             <div class="offers__plus">
-                                <img src="./assets/icons/offers-icon-1.png" alt="Опытный гид">
-                                <h4>Опытный гид</h4>
-                                <p>
-                                    Для современного мира базовый вектор развития предполагает независимые способы
-                                    реализации соответствующих условий активизации.
-                                </p>
+                                <div class="plus-img">
+                                    <img src="./assets/icons/offers-icon-1.png" alt="Опытный гид">
+                                </div>
+                                <div class="plus-text">
+                                    <h4>Опытный гид</h4>
+                                    <p>
+                                        Для современного мира базовый вектор развития предполагает независимые способы
+                                        реализации соответствующих условий активизации.
+                                    </p>
+                                </div>
                             </div>
                             <div class="offers__plus">
-                                <img src="./assets/icons/offers-icon-2.png" alt="Безопасный поход">
-                                <h4>Безопасный поход</h4>
-                                <p>
-                                    Для современного мира базовый вектор развития предполагает независимые способы
-                                    реализации соответствующих условий активизации.
-                                </p>
+                                <div class="plus-img">
+                                    <img src="./assets/icons/offers-icon-2.png" alt="Безопасный поход">
+                                </div>
+                                <div class="plus-text">
+                                    <h4>Безопасный поход</h4>
+                                    <p>
+                                        Для современного мира базовый вектор развития предполагает независимые способы
+                                        реализации соответствующих условий активизации.
+                                    </p>
+                                </div>
                             </div>
                             <div class="offers__plus">
-                                <img src="./assets/icons/offers-icon-3.png" alt="Лояльные цены">
-                                <h4>Лояльные цены</h4>
-                                <p>
-                                    Для современного мира базовый вектор развития предполагает независимые способы
-                                    реализации соответствующих условий активизации.
-                                </p>
+                                <div class="plus-img">
+                                    <img src="./assets/icons/offers-icon-3.png" alt="Лояльные цены">
+                                </div>
+                                <div class="plus-text">
+                                    <h4>Лояльные цены</h4>
+                                    <p>
+                                        Для современного мира базовый вектор развития предполагает независимые способы
+                                        реализации соответствующих условий активизации.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn">Стоимость программ</a>
+                        <div class="offers__btn">
+                            <a href="#" class="btn">Стоимость программ</a>
+                        </div>
                     </div>
                     <div class="offers__images">
                         <img src="./assets/images/offers-img-01.png" alt="beautiful veiw">
@@ -152,16 +170,18 @@
                     </div>
                     <div class="popular-tours__cards">
                         <div class="card">
-                            <img src="./assets/images/popular-tours-01.png" alt="">
+                            <img src="./assets/images/popular-tours-01.png" class="card__img" alt="beautiful view">
                             <div class="card__info">
-                                <h4>Озеро возле гор</h4>
-                                <span>романтическое приключение</span>
-                                <span class="price">480$</span>
+                                <h4 class="card__title">Озеро возле гор</h4>
+                                <span class="card__subtext">романтическое приключение</span>
+                                <span class="card__price">480$</span>
                             </div>
                         </div>
                         <!-- add other cards with javascript -->
                     </div>
-                    <a href="#" class="btn">Рейтинг направлений</a>
+                    <div class="popular-tours__btn">
+                        <a href="#" class="btn">Рейтинг направлений</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -179,60 +199,66 @@
                                 <img src="./assets/images/post-img-01.jpg" alt="beautiful veiw">
                             </div>
                             <div class="post__info">
-                                <h4>Красивая Италя, какая она в реальности?</h4>
-                                <p>Для современного мира базовый вектор развития предполагает независимые способы
+                                <h4 class="post__title">Красивая Италя, какая она в реальности?</h4>
+                                <p class="post__text">Для современного мира базовый вектор развития предполагает
+                                    независимые способы
                                     реализации соответствующих условий активизации.
                                 </p>
-                                <span class="post__date">01/04/2023</span>
-                                <a href="#" class="post__link">читать статью</a>
+                                <div class="post__footer">
+                                    <span class="post__date">01/04/2023</span>
+                                    <a href="#" class="post__link">читать статью</a>
+                                </div>
                             </div>
                         </article>
                         <!-- add other article with js -->
                     </div>
-                    <a href="#" class="btn">Другие материалы</a>
+                    <div class="blog__btn">
+                        <a href="#" class="btn">Другие материалы</a>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- gallery section -->
         <section class="gallery">
             <div class="container">
-                <div class="heading-section">
+                <div class="section-heading">
                     <span>фото-отчет</span>
                     <h2>Делимся впечатлениями</h2>
                 </div>
                 <div class="gallery__block">
-                    <img src="./assets/images/gallery-01.jpg" alt="beautiful view">
-                    <img src="./assets/images/gallery-02.jpg" alt="beautiful view">
-                    <img src="./assets/images/gallery-03.jpg" alt="beautiful view">
-                    <img src="./assets/images/gallery-04.jpg" alt="beautiful view">
-                    <img src="./assets/images/gallery-05.jpg" alt="beautiful view">
-                    <img src="./assets/images/gallery-06.jpg" alt="beautiful view">
+                    <div class="gallery__img"></div>
+                    <!-- add other images with js -->
                 </div>
-                <a href="#" class="btn">Наш pinterest</a>
-            </div>
+                <div class="gallery__btn-slider">
+                    <button class="prev-btn"><img src="./assets/icons/arrow-slider-prev.png" alt=""></button>
+                    <button class="next-btn"><img src="./assets/icons/arrow-slider-next.png" alt=""></button>
+                </div>
+                <div class="gallery__btn">
+                    <a href="#" class="btn">Наш pinterest</a>
+                </div>
         </section>
         <!-- subscribe section -->
         <section class="subscribe">
             <div class="container">
                 <div class="subscribe__content">
-                    <div class="heading-section">
+                    <div class="section-heading">
                         <span>актуально</span>
                         <h2>Получайте полезные рассылки о путешествиях</h2>
                     </div>
-                    <form action="" class="subscribe__form">
-                        <label for="subscribe__input">Введите e-mail адрес</label>
-                        <fieldset>
-                            <input type="email" name="email" id="subscribe__input">
+                    <form action="#" class="subscribe__form">
+                        <span>Введите e-mail адрес</span>
+                        <div class="subscribe__block">
+                            <input type="email" name="email" class="subscribe__input" placeholder="name@domain.com">
                             <button type="submit" class="btn">Подписаться на новости</button>
-                        </fieldset>
-                        <span>подписываясь на новости, вы автоматически соглашаетесь с условиями обработки персональных
-                            данных и правилами рекламных рассылок</span>
+                        </div>
+                        <span>подписываясь на новости, вы автоматически соглашаетесь <a href="#">с условиями обработки персональных
+                            данных</a> и <a href="#">правилами рекламных рассылок</a></span>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__info">

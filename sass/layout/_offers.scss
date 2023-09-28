@@ -1,0 +1,27 @@
+.offers {
+    background-color: $clr-gray-light;
+
+    &__pluses {
+        margin-block: 2em;
+    }
+
+    &__plus {
+        @include flex(row);
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 1em;
+
+        & > .plus-img {
+            flex-shrink: 0;
+        }
+    }
+
+    &__btn {
+        margin-bottom: 2em;
+        text-align: center;
+    }
+
+    &__images {
+        display: none;
+    }
+}

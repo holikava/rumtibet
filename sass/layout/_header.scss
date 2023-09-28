@@ -18,33 +18,33 @@ header {
         position: absolute;
         left: 0;
         right: 0;
-        height: 80vh;
+        min-height: 80vh;
+        padding-block: 2em;
     }
 
     &__link {
         color: $clr-white;
-        padding-left: 3em;
-        padding-block: 1em;
-        position: relative;
+        height: 10vh;
+        padding-block: 0.5em;
+        line-height: 1;
         @include transition(200ms);
 
         &::before {
             content: "";
-            position: absolute;
-            top: 1em;
-            left: 1em;
-            display: block;
-            width: 30px;
-            height: 30px;
-            background-image: url(./../assets/icons/arrow.png);
-            background-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            width: 26px;
+            height: 26px;
+            margin-right: 0.5em;
+            margin-left: 1em;
+            background-image: url(/assets/icons/arrow-white.png);
         }
 
         &:hover {
             color: $clr-primary;
 
             &::before {
-                background-image: url(./../assets/icons/arrow-hover.png);
+                background-image: url(/assets/icons/arrow-color.png);
             }
         }
     }

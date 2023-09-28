@@ -1,0 +1,29 @@
+.subscribe {
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px $clr-gray-light;
+    margin-block: 3em;
+
+    &__block {
+        margin-block: 1em;
+    }
+
+
+    &__input {
+        width: 90%;
+        max-width: 400px;
+        background-color: $clr-gray-light;
+        padding: 0.9em;
+        margin-bottom: 1em;
+    }
+
+    &__form > span {
+        display: inline-block;
+        font-size: $fs-subtext;
+
+        & > a {
+            color: $clr-black;
+            text-decoration: underline;
+        }
+    }
+}
