@@ -142,7 +142,7 @@ header {
   height: 26px;
   margin-right: 0.5em;
   margin-left: 1em;
-  background-image: url(/assets/icons/arrow-white.png);
+  background-image: url(../assets/icons/arrow-white.png);
 }
 .navigation__link:hover {
   color: rgb(242, 190, 34);
@@ -191,7 +191,7 @@ header {
 
 .hero {
   height: 100vh;
-  background-image: url(/assets/images/hero-img.jpg);
+  background-image: url(../assets/images/hero-img.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   z-index: -100;
@@ -241,7 +241,7 @@ header {
   left: calc(50% - 25px);
   width: 50px;
   height: 50px;
-  background: url(/assets/icons/play-btn.png) center;
+  background: url(../assets/icons/play-btn.png) center;
   background-repeat: no-repeat;
   z-index: 10;
 }
@@ -380,7 +380,7 @@ header {
 .gallery__img {
   width: 80%;
   height: 340px;
-  background-image: url(/assets/images/gallery-01.jpg);
+  background-image: url(../assets/images/gallery-01.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -467,11 +467,11 @@ header {
   height: 26px;
   vertical-align: middle;
   transform: scale(0.6);
-  background-image: url(/assets/icons/arrow-white.png);
+  background-image: url(../assets/icons/arrow-white.png);
 }
 .footer__links-services * a:hover, .footer__links-topicks * a:hover {
   color: rgb(242, 190, 34);
 }
 .footer__links-services * a:hover::before, .footer__links-topicks * a:hover::before {
-  background-image: url(/assets/icons/arrow-color.png);
+  background-image: url(../assets/icons/arrow-color.png);
 }

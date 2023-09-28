@@ -44,14 +44,14 @@
                 height: 26px;
                 vertical-align: middle;
                 transform: scale(0.6);
-                background-image: url(/assets/icons/arrow-white.png);
+                background-image: url(../assets/icons/arrow-white.png);
             }
 
             &:hover {
                 color: $clr-primary;
 
                 &::before {
-                    background-image: url(/assets/icons/arrow-color.png);
+                    background-image: url(../assets/icons/arrow-color.png);
                 }
             }
         }
