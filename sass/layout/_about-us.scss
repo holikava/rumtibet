@@ -1,5 +1,5 @@
 .about-us {
-    background-color: $clr-white;
+    background-color: transparent;
 
     &__content {
         @include flex(column);
@@ -15,6 +15,7 @@
 
     &__video {
         position: relative;
+        z-index: -1;
         
         &::after {
             content: "";

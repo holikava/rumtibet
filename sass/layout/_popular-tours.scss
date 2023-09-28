@@ -12,9 +12,10 @@
 
 .card {
     position: relative;
-    width: 80%;
+    width: 90%;
     color: $clr-white;
     border-radius: 10px;
+    z-index: -1;
 
     &__img {
         width: 100%;

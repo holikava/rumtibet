@@ -20,6 +20,8 @@ header {
         right: 0;
         min-height: 80vh;
         padding-block: 2em;
+        background-color: black;
+        z-index: 1000;
     }
 
     &__link {
