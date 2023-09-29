@@ -155,7 +155,7 @@ section {
   width: 3rem;
   height: 3rem;
   border-radius: 10px;
-  background: url(/assets/icons/top-link-icon.png) center, rgba(196, 196, 196, 0.5);
+  background: url(../assets/icons/top-link-icon.png) center, rgba(196, 196, 196, 0.5);
   transition: all 300ms ease-in-out;
   animation: pulse-top-link 2000ms ease-in-out infinite;
   visibility: hidden;
