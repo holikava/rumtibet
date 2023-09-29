@@ -8,20 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Yanone+Kaffeesatz:wght@300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600&family=Roboto+Condensed:ital,wght@1,300;1,400&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css">
     <script src="./app.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
-
     <header id="header">
-        <div class="container">
-            <nav class="navigation">
-                <div class="navigation__header">
-                    <div class="logo">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav__header">
+                    <div class="logo" id="top">
                         <img src="./assets/icons/logo.png" alt="logo of travel agency">
                         <a href="#header"><img src="./assets/icons/logo-text.png" alt="logo of travel agency"></a>
                     </div>
@@ -30,20 +30,22 @@
                     </div>
                 </div>
                 <!-- navigation -->
-                <ul class="navigation__list">
-                    <li><a href="#top" class="navigation__link">Главная</a></li>
-                    <li><a href="#popular-tours" class="navigation__link">Направления</a></li>
-                    <li><a href="#about-us" class="navigation__link">Программа тура</a></li>
-                    <li><a href="#offers" class="navigation__link">Стоимость</a></li>
-                    <li><a href="#blog" class="navigation__link">Блог</a></li>
-                    <li><a href="#footer" class="navigation__link">Контакты</a></li>
-                    <button class="btn navigation__btn">Консультация</button>
-                </ul>
-            </nav>
-        </div>
+                <div class="nav__links">
+                    <ul class="nav__list">
+                        <li><a href="#top" class="nav__link">Главная</a></li>
+                        <li><a href="#popular-tours" class="nav__link">Направления</a></li>
+                        <li><a href="#about-us" class="nav__link">Программа тура</a></li>
+                        <li><a href="#offers" class="nav__link">Стоимость</a></li>
+                        <li><a href="#blog" class="nav__link">Блог</a></li>
+                        <li><a href="#footer" class="nav__link">Контакты</a></li>
+                    </ul>
+                    <button class="btn nav__btn">Консультация</button>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <section class="hero" id="top">
+        <section class="hero">
             <div class="container">
                 <div class="hero__content">
                     <h1 class="hero__title">Насладись прогулкой в горах с надежной командой</h1>
@@ -251,8 +253,9 @@
                             <input type="email" name="email" class="subscribe__input" placeholder="name@domain.com">
                             <button type="submit" class="btn">Подписаться на новости</button>
                         </div>
-                        <span>подписываясь на новости, вы автоматически соглашаетесь <a href="#">с условиями обработки персональных
-                            данных</a> и <a href="#">правилами рекламных рассылок</a></span>
+                        <span>подписываясь на новости, вы автоматически соглашаетесь <a href="#">с условиями обработки
+                                персональных
+                                данных</a> и <a href="#">правилами рекламных рассылок</a></span>
                     </form>
                 </div>
             </div>
@@ -299,6 +302,7 @@
             </div>
         </div>
     </footer>
+    <a href="#top" class="top-link nav__link"></a>
 </body>
 
 </html>

@@ -19,6 +19,7 @@
 
     &__form > span {
         display: inline-block;
+        font-family: $ff-italic;
         font-size: $fs-subtext;
 
         & > a {
