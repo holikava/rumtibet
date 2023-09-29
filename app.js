@@ -15,6 +15,16 @@ navToggle.addEventListener('click', () => {
         linksContainer.style.height = 0;
         navToggle.style.transform = 'none';
     };
+
+    // close nav if click on page (not on nav)
+    const main = document.querySelector('main');
+
+    main.addEventListener('click', () => {
+        if (linksContainer.style.height !== 0) {
+            linksContainer.style.height = 0;
+            navToggle.style.transform = 'none';
+        }
+    })
 });
 
 // scroll to links
@@ -39,7 +49,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-scrollLinks.forEach( (link) => {
+scrollLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const id = e.currentTarget.getAttribute('href').slice(1);
