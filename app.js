@@ -1,26 +1,67 @@
-// ********** mobile navigation *****************
-const header = document.querySelector('header');
-const navContainer = document.querySelector('.navigation__list');
-const toggleBtn = document.querySelector('.toggle-menu');
-const color = 'rgba(73, 72, 72, 0.97)';
+// navigation
+const navToggle = document.querySelector('.toggle-menu');
+const linksContainer = document.querySelector('.nav__links');
+const navLinksList = document.querySelector('.nav__list');
 
-toggleBtn.addEventListener('click', () => {
-    if(navContainer.classList.contains('show-links')) {
-        navContainer.classList.remove('show-links');
-        toggleBtn.style.transform = 'none';
-        changeBgColor(header);
+// show links
+navToggle.addEventListener('click', () => {
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+    const linksHeight = navLinksList.getBoundingClientRect().height;
+
+    if (containerHeight === 0) {
+        linksContainer.style.height = `${linksHeight}px`;
+        navToggle.style.transform = 'rotate(90deg)';
     } else {
-        navContainer.classList.add('show-links');
-        toggleBtn.style.transform = 'rotate(90deg)';
-        changeBgColor(header);
-        changeBgColor(navContainer);
+        linksContainer.style.height = 0;
+        navToggle.style.transform = 'none';
+    };
+});
+
+// scroll to links
+const scrollLinks = document.querySelectorAll('.nav__link');
+const navBar = document.querySelector('.nav');
+const topLink = document.querySelector('.top-link');
+
+window.addEventListener('scroll', () => {
+    const scrollHeight = window.pageYOffset;
+    const navHeight = navBar.getBoundingClientRect().height;
+
+    if (scrollHeight > navHeight) {
+        navBar.classList.add('fixed-nav');
+    } else {
+        navBar.classList.remove('fixed-nav');
+    };
+
+    if (scrollHeight > 500) {
+        topLink.classList.add('show-top-link');
+    } else {
+        topLink.classList.remove('show-top-link');
     }
 });
 
-const changeBgColor = (elem) => {
-    if (navContainer.classList.contains('show-links')) {
-        elem.style.backgroundColor = `${color}`;
-    } else {
-        elem.style.backgroundColor = 'transparent';
-    }
-}
+scrollLinks.forEach( (link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = e.currentTarget.getAttribute('href').slice(1);
+        const elem = document.getElementById(id);
+        const navHeight = navBar.getBoundingClientRect().height;
+        const containerHeight = linksContainer.getBoundingClientRect().height;
+        const navFixed = navBar.classList.contains('fixed-nav');
+        let position = elem.offsetTop - navHeight;
+
+        if (!navFixed) {
+            position = position - navHeight;
+        };
+
+        if (navHeight > 80) {
+            position = position + containerHeight;
+        };
+
+        window.scrollTo({
+            left: 0,
+            top: position,
+        });
+        navToggle.style.transform = 'none';
+        linksContainer.style.height = 0;
+    });
+});

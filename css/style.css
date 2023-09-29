@@ -13,7 +13,7 @@
 
 body {
   font-size: 1.2rem;
-  font-family: "Archivo", sans-serif;
+  font-family: "Onest", sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: rgb(34, 34, 34);
@@ -21,7 +21,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Archivo", sans-serif;
+  font-family: "Onest", sans-serif;
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 0.3rem;
@@ -102,71 +102,85 @@ section {
 .section-heading > span {
   display: inline-block;
   color: rgb(242, 190, 34);
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-weight: 300;
+  font-family: "Roboto Condensed", sans-serif;
   margin-bottom: 0.5em;
 }
 
-header {
-  position: fixed;
+.nav {
+  padding: 0.5rem 1rem;
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  background-color: rgba(177, 179, 179, 0.95);
 }
-
-.navigation {
-  height: 15vh;
-}
-.navigation__header {
+.nav__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: inherit;
 }
-.navigation__list {
-  display: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 80vh;
-  padding-block: 2em;
-  background-color: black;
-  z-index: 1000;
+.nav__links {
+  height: 0;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
 }
-.navigation__link {
+.nav__link {
   color: rgb(253, 253, 253);
-  height: 10vh;
-  padding-block: 0.5em;
-  line-height: 1;
-  transition: all 200ms ease-in-out;
+  padding: 1rem 0;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 3px rgb(135, 135, 135);
+  transition: all 300ms ease-in-out;
 }
-.navigation__link::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 26px;
-  height: 26px;
-  margin-right: 0.5em;
-  margin-left: 1em;
-  transform: scale(0.6);
-  background-image: url(../assets/icons/arrow-white.png);
-}
-.navigation__link:hover {
+.nav__link:hover {
   color: rgb(242, 190, 34);
 }
-.navigation__link:hover::before {
-  background-image: url(/assets/icons/arrow-color.png);
-}
-.navigation__btn {
-  margin-top: 1em;
-  margin-left: 1em;
+
+.fixed-nav {
+  position: fixed;
 }
 
-.show-links {
+.fixed-nav .nav-links {
+  height: auto !important;
+}
+
+.top-link {
+  cursor: pointer;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
   display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10px;
+  background: url(/assets/icons/top-link-icon.png) center, rgba(196, 196, 196, 0.5);
+  transition: all 300ms ease-in-out;
+  animation: pulse-top-link 2000ms ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+}
+.top-link:hover {
+  background-color: rgba(177, 179, 179, 0.95);
 }
 
+.show-top-link {
+  visibility: visible;
+  z-index: 100;
+}
+
+@keyframes pulse-top-link {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .toggle-menu {
   cursor: pointer;
   transition: all 300ms ease-in-out;
@@ -356,6 +370,7 @@ header {
 }
 .post__info {
   padding: 1em;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: rgb(253, 253, 253);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -431,6 +446,7 @@ header {
 }
 .subscribe__form > span {
   display: inline-block;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 1rem;
 }
 .subscribe__form > span > a {
@@ -443,8 +459,6 @@ header {
   color: rgb(253, 253, 253);
   background-color: rgb(7, 111, 114);
   padding-block: 2em;
-  position: relative;
-  z-index: -10;
 }
 .footer * h3 {
   margin-bottom: 1em;
@@ -470,24 +484,8 @@ header {
 }
 .footer__links-services * a, .footer__links-topicks * a {
   padding-block: 0.4em;
-  position: relative;
-  z-index: -1;
   transition: all 200ms ease-in-out;
-}
-.footer__links-services * a::before, .footer__links-topicks * a::before {
-  display: inline-block;
-  content: "";
-  width: 26px;
-  height: 26px;
-  vertical-align: middle;
-  transform: scale(0.6);
-  background-image: url(../assets/icons/arrow-white.png);
-  position: relative;
-  z-index: 0;
 }
 .footer__links-services * a:hover, .footer__links-topicks * a:hover {
   color: rgb(242, 190, 34);
-}
-.footer__links-services * a:hover::before, .footer__links-topicks * a:hover::before {
-  background-image: url(../assets/icons/arrow-color.png);
 }

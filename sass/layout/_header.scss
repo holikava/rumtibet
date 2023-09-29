@@ -1,66 +1,135 @@
-header {
-    position: fixed;
+// .nav {
+//     height: 15vh;
+
+//     &__header {
+//         @include flex(row);
+//         height: inherit;
+//     }
+
+//     &__list {
+//         display: none;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         min-height: 80vh;
+//         padding-block: 2em;
+//         z-index: 1000;
+//     }
+
+//     &__link {
+//         color: $clr-white;
+//         height: 10vh;
+//         padding-block: 0.5em;
+//         line-height: 1;
+//         @include transition(200ms);
+
+//         &::before {
+//             content: "";
+//             display: inline-block;
+//             vertical-align: middle;
+//             width: 26px;
+//             height: 26px;
+//             margin-right: 0.5em;
+//             margin-left: 1em;
+//             transform: scale(0.);
+//             background-image: url(../assets/icons/arrow-white.png);
+//         }
+
+//         &:hover {
+//             color: $clr-primary;
+
+//             &::before {
+//                 background-image: url(/assets/icons/arrow-color.png);
+//             }
+//         }
+//     }
+
+//     &__btn {
+//         margin-top: 1em;
+//         margin-left: 1em;
+//     }
+// }
+
+// use js, showing navigation links
+
+.nav {
+    padding: 0.5rem 1rem;
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-}
-
-.navigation {
-    height: 15vh;
+    width: 100%;
+    background-color: $clr-transperent;
 
     &__header {
         @include flex(row);
-        height: inherit;
     }
 
-    &__list {
-        display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        min-height: 80vh;
-        padding-block: 2em;
-        background-color: black;
-        z-index: 1000;
+    &__links {
+        height: 0;
+        overflow: hidden;
+        @include transition(300ms);
     }
 
     &__link {
         color: $clr-white;
-        height: 10vh;
-        padding-block: 0.5em;
-        line-height: 1;
-        @include transition(200ms);
-
-        &::before {
-            content: "";
-            display: inline-block;
-            vertical-align: middle;
-            width: 26px;
-            height: 26px;
-            margin-right: 0.5em;
-            margin-left: 1em;
-            transform: scale(0.6);
-            background-image: url(../assets/icons/arrow-white.png);
-        }
+        padding: 1rem 0;
+        font-family: $ff-italic;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-shadow: 1px 1px 3px $clr-gray;
+        @include transition(300ms);
 
         &:hover {
             color: $clr-primary;
-
-            &::before {
-                background-image: url(/assets/icons/arrow-color.png);
-            }
         }
-    }
-
-    &__btn {
-        margin-top: 1em;
-        margin-left: 1em;
     }
 }
 
-// use for js, showing navigation links
-.show-links {
+.fixed-nav {
+    position: fixed;
+}
+
+.fixed-nav .nav-links {
+    height: auto !important;
+}
+
+.top-link {
+    cursor: pointer;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
     display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    background: url(/assets/icons/top-link-icon.png) center, $clr-transperent-light;
+    @include transition(300ms);
+    animation: pulse-top-link 2000ms ease-in-out infinite;
+    visibility: hidden;
+    z-index: -100;
+
+    &:hover {
+        background-color: $clr-transperent;
+    }
+}
+
+.show-top-link {
+    visibility: visible;
+    z-index: 100;
+}
+
+@keyframes pulse-top-link {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .toggle-menu {

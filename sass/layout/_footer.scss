@@ -3,8 +3,6 @@
     color: $clr-white;
     background-color: $clr-secondary;
     padding-block: 2em;
-    position: relative;
-    z-index: -10;
 
     & * h3 {
         margin-bottom: 1em;
@@ -37,28 +35,10 @@
 
         & * a {
             padding-block: 0.4em;
-            position: relative;
-            z-index: -1;
             @include transition(200ms);
-
-            &::before {
-                display: inline-block;
-                content: "";
-                width: 26px;
-                height: 26px;
-                vertical-align: middle;
-                transform: scale(0.6);
-                background-image: url(../assets/icons/arrow-white.png);
-                position: relative;
-                z-index: 0;
-            }
 
             &:hover {
                 color: $clr-primary;
-
-                &::before {
-                    background-image: url(../assets/icons/arrow-color.png);
-                }
             }
         }
     }
