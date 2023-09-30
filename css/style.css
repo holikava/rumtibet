@@ -263,7 +263,7 @@ section {
   display: flex;
   width: 90vw;
   height: 400px;
-  background-image: url(../../assets/images/about-img-01.jpg);
+  background-image: url(../assets/images/about-img-01.jpg);
   background-position: center;
   background-repeat: no-repeat;
 }
