@@ -8,36 +8,53 @@
     &__images {
         order: 2;
 
-        & > img:last-of-type {
+        &>img:last-of-type {
             display: none;
-        }
-    }
-
-    &__video {
-        position: relative;
-        z-index: -1;
-        
-        &::after {
-            content: "";
-            display: block;
-            cursor: pointer;
-            position: absolute;
-            top: calc(50% - 25px);
-            left: calc(50% - 25px);
-            width: 50px;
-            height: 50px;
-            background: url(../assets/icons/play-btn.png) center;
-            background-repeat: no-repeat;
-            z-index: 10;
         }
     }
 
     &__text {
         order: 1;
     }
-    
+
     &__btn {
         margin-block: 2em;
         text-align: center;
     }
+}
+
+.video {
+    display: flex;
+    width: 90vw;
+    height: 400px;
+    background-image: url(../../assets/images/about-img-01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    &__play-btn {
+        display: block;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        background: url(../assets/icons/play-btn.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: auto;
+    }
+}
+
+.show-video {
+    visibility: visible;
+    z-index: 100;
 }
