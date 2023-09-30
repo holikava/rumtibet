@@ -75,3 +75,19 @@ scrollLinks.forEach((link) => {
         linksContainer.style.height = 0;
     });
 });
+
+
+// loading video on about-us section
+const parentContainer = document.querySelector('.video');
+const playBtn = document.querySelector('.video__play-btn');
+const videoContainer = document.querySelector('.video__container');
+
+playBtn.addEventListener('click', () => {
+        videoContainer.classList.add('show-video');
+        parentContainer.style.position = 'relative';
+});
+
+videoContainer.addEventListener('click', () => {
+    videoContainer.classList.remove('show-video');
+    parentContainer.style.position = 'static';
+})
