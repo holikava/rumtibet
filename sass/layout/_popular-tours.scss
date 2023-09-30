@@ -2,6 +2,7 @@
 
     &__cards {
         @include flex(row);
+        gap: 1em;
         margin-bottom: 2em;
     }
 
@@ -11,8 +12,9 @@
 }
 
 .card {
+    flex: 0 0 90%;
     position: relative;
-    width: 90%;
+    max-width: 380px;
     color: $clr-white;
     border-radius: 10px;
     z-index: -1;

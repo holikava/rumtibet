@@ -83,11 +83,58 @@ const playBtn = document.querySelector('.video__play-btn');
 const videoContainer = document.querySelector('.video__container');
 
 playBtn.addEventListener('click', () => {
-        videoContainer.classList.add('show-video');
-        parentContainer.style.position = 'relative';
+    videoContainer.classList.add('show-video');
+    parentContainer.style.position = 'relative';
 });
 
 videoContainer.addEventListener('click', () => {
     videoContainer.classList.remove('show-video');
     parentContainer.style.position = 'static';
 })
+
+
+// carousel for popular-tuors section
+const tours = [
+    {
+        id: 1,
+        title: 'Озеро возле гор',
+        img: './assets/images/popular-tours-01.png',
+        desc: 'романтическое приключение',
+        price: '480$',
+    },
+    {
+        id: 2,
+        title: 'Ночь в горах',
+        img: './assets/images/popular-tours-02.png',
+        desc: 'в компании друзей',
+        price: '500$',
+    },
+    {
+        id: 3,
+        title: 'Йога в горах',
+        img: './assets/images/popular-tours-01.png',
+        desc: 'для тех, кто заботится о себе',
+        price: '280$',
+    }
+];
+
+const cardsContainer = document.querySelector('.popular-tours__cards');
+
+window.addEventListener('DOMContentLoaded', () => {
+    displayCards(tours);
+})
+
+const displayCards = (cards) => {
+    let displayCard = cards.map((card) => {
+        return `<div class="card">
+            <img src=${card.img} class="card__img" alt="beautiful view">
+                <div class="card__info">
+                    <h4 class="card__title">${card.title}</h4>
+                    <span class="card__subtext">${card.desc}</span>
+                    <span class="card__price">${card.price}</span>
+                </div>
+        </div>`;
+    });
+    displayCard = displayCard.join('');
+    cardsContainer.innerHTML = displayCard;
+}
