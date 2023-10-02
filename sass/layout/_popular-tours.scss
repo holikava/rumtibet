@@ -2,19 +2,35 @@
 
     &__cards {
         @include flex(row);
-        gap: 1em;
-        margin-bottom: 2em;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    &__carousel-btn {
+        width: 20%;
+        margin: auto;
+        text-align: center;
+
+        & > .next-btn {
+            opacity: 0.6;
+            @include transition(300ms);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 
     &__btn {
         text-align: center;
+        margin-top: 2em;
     }
 }
 
 .card {
-    flex: 0 0 90%;
+    flex: 0 0 100%;
     position: relative;
-    max-width: 380px;
+    width: 380px;
     color: $clr-white;
     border-radius: 10px;
     z-index: -1;
@@ -47,4 +63,8 @@
         background-color: lighten($clr-transperent-light, 20%);
         padding: 0.2em 0.7em;
     }
+}
+
+.carousel__block {
+    display: flex;
 }

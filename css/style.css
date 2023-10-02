@@ -146,6 +146,36 @@ section {
   height: auto !important;
 }
 
+.toggle-menu {
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.toggle-icon {
+  display: block;
+  background-color: rgb(253, 253, 253);
+  height: 3px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+  margin: 10px 0;
+}
+.toggle-icon::after, .toggle-icon::before {
+  display: block;
+  content: "";
+  position: absolute;
+  background-color: rgb(253, 253, 253);
+  height: 3px;
+  width: 2em;
+  border-radius: 2px;
+}
+.toggle-icon::before {
+  bottom: 13px;
+}
+.toggle-icon::after {
+  top: 13px;
+}
+
 .top-link {
   cursor: pointer;
   position: fixed;
@@ -181,36 +211,6 @@ section {
     transform: scale(1);
   }
 }
-.toggle-menu {
-  cursor: pointer;
-  transition: all 300ms ease-in-out;
-}
-
-.toggle-icon {
-  display: block;
-  background-color: rgb(253, 253, 253);
-  height: 3px;
-  width: 2em;
-  border-radius: 2px;
-  position: relative;
-  margin: 10px 0;
-}
-.toggle-icon::after, .toggle-icon::before {
-  display: block;
-  content: "";
-  position: absolute;
-  background-color: rgb(253, 253, 253);
-  height: 3px;
-  width: 2em;
-  border-radius: 2px;
-}
-.toggle-icon::before {
-  bottom: 13px;
-}
-.toggle-icon::after {
-  top: 13px;
-}
-
 .hero {
   height: 100vh;
   background-image: url(../assets/images/hero-img.jpg);
@@ -325,17 +325,30 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
-  margin-bottom: 2em;
+  width: 100%;
+  overflow-x: hidden;
+}
+.popular-tours__carousel-btn {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+.popular-tours__carousel-btn > .next-btn {
+  opacity: 0.6;
+  transition: all 300ms ease-in-out;
+}
+.popular-tours__carousel-btn > .next-btn:hover {
+  opacity: 1;
 }
 .popular-tours__btn {
   text-align: center;
+  margin-top: 2em;
 }
 
 .card {
-  flex: 0 0 90%;
+  flex: 0 0 100%;
   position: relative;
-  max-width: 380px;
+  width: 380px;
   color: rgb(253, 253, 253);
   border-radius: 10px;
   z-index: -1;
@@ -364,6 +377,10 @@ section {
   transform: translateY(-50%);
   background-color: rgba(247, 247, 247, 0.5);
   padding: 0.2em 0.7em;
+}
+
+.carousel__block {
+  display: flex;
 }
 
 .blog {
