@@ -93,6 +93,43 @@
     height: auto !important;
 }
 
+// ************ toggle icon
+.toggle-menu {
+    cursor: pointer;
+    @include transition(300ms);
+}
+
+.toggle-icon {
+    display: block;
+    background-color: $clr-white;
+    height: 3px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+    margin: 10px 0;
+
+    &::after,
+    &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        background-color: $clr-white;
+        height: 3px;
+        width: 2em;
+        border-radius: 2px;
+    }
+
+    &::before {
+        bottom: 13px;
+    }
+
+    &::after {
+        top: 13px;
+    }
+}
+
+// ******** arrow to top
+
 .top-link {
     cursor: pointer;
     position: fixed;
@@ -129,39 +166,5 @@
 
     100% {
         transform: scale(1);
-    }
-}
-
-.toggle-menu {
-    cursor: pointer;
-    @include transition(300ms);
-}
-
-.toggle-icon {
-    display: block;
-    background-color: $clr-white;
-    height: 3px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-    margin: 10px 0;
-
-    &::after,
-    &::before {
-        display: block;
-        content: '';
-        position: absolute;
-        background-color: $clr-white;
-        height: 3px;
-        width: 2em;
-        border-radius: 2px;
-    }
-
-    &::before {
-        bottom: 13px;
-    }
-
-    &::after {
-        top: 13px;
     }
 }

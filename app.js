@@ -112,10 +112,10 @@ const tours = [
     {
         id: 3,
         title: 'Йога в горах',
-        img: './assets/images/popular-tours-01.png',
+        img: './assets/images/popular-tours-03.png',
         desc: 'для тех, кто заботится о себе',
         price: '280$',
-    }
+    },
 ];
 
 const cardsContainer = document.querySelector('.popular-tours__cards');
@@ -137,4 +137,33 @@ const displayCards = (cards) => {
     });
     displayCard = displayCard.join('');
     cardsContainer.innerHTML = displayCard;
-}
+
+
+// find the way to carouselCards and take out code from below in diffrent function
+// carousel cards
+    const carouselCards = document.querySelectorAll('.card');
+    const carouselBtn = document.querySelector('.next-btn');
+
+    console.log(carouselCards.length);
+
+    carouselCards.forEach((card, index) => {
+        card.style.transform = `translateX(${index * 100}%)`;
+    });
+
+    let counter = 0;
+    carouselBtn.addEventListener('click', () => {
+        counter++;
+        carousel();
+    });
+
+    const carousel = () => {
+        if (counter > carouselCards.length - 1) {
+            counter = 0;
+        };
+
+        carouselCards.forEach((card) => {
+            card.style.transform = `translateX(-${counter * 100}%)`;
+        });
+    };
+// carousel cards end
+};
