@@ -118,11 +118,7 @@ const tours = [
     },
 ];
 
-const cardsContainer = document.querySelector('.popular-tours__cards');
-
-window.addEventListener('DOMContentLoaded', () => {
-    displayCards(tours);
-})
+const cardsContainer = document.querySelector('.carousel__cards');
 
 const displayCards = (cards) => {
     let displayCard = cards.map((card) => {
@@ -137,33 +133,39 @@ const displayCards = (cards) => {
     });
     displayCard = displayCard.join('');
     cardsContainer.innerHTML = displayCard;
-
-
-// find the way to carouselCards and take out code from below in diffrent function
-// carousel cards
-    const carouselCards = document.querySelectorAll('.card');
-    const carouselBtn = document.querySelector('.next-btn');
-
-    console.log(carouselCards.length);
-
-    carouselCards.forEach((card, index) => {
-        card.style.transform = `translateX(${index * 100}%)`;
-    });
-
-    let counter = 0;
-    carouselBtn.addEventListener('click', () => {
-        counter++;
-        carousel();
-    });
-
-    const carousel = () => {
-        if (counter > carouselCards.length - 1) {
-            counter = 0;
-        };
-
-        carouselCards.forEach((card) => {
-            card.style.transform = `translateX(-${counter * 100}%)`;
-        });
-    };
-// carousel cards end
 };
+
+displayCards(tours);
+
+const carouselCards = document.querySelectorAll('.card');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+carouselCards.forEach((card, index) => {
+    card.style.transform = `translateX(${index * 100}%)`;
+});
+
+let counter = 0;
+nextBtn.addEventListener('click', () => {
+    counter++;
+    carousel();
+});
+
+prevBtn.addEventListener('click', () => {
+    counter--;
+    carousel();
+});
+
+const carousel = () => {
+    if (counter === carouselCards.length) {
+        counter = 0;
+    };
+    if (counter < 0) {
+        counter = carouselCards.length - 1;
+    };
+    
+    carouselCards.forEach((card) => {
+        card.style.transform = `translateX(-${counter * 100}%)`;
+    });
+};
+

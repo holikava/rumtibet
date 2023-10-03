@@ -1,31 +1,37 @@
 .popular-tours {
 
+    &__btn {
+        text-align: center;
+    }
+}
+
+.carousel {
+
     &__cards {
         @include flex(row);
         width: 100%;
         overflow-x: hidden;
     }
 
-    &__carousel-btn {
-        width: 20%;
-        margin: auto;
-        text-align: center;
+    &__btns {
+        margin-block: 1em;
+        @include flex(row);
 
-        & > .next-btn {
-            opacity: 0.6;
+        &> button {
+            opacity: 0.5;
             @include transition(300ms);
 
             &:hover {
                 opacity: 1;
             }
         }
-    }
 
-    &__btn {
-        text-align: center;
-        margin-top: 2em;
+        &>.prev-btn {
+            transform: rotate(180deg);
+        }
     }
 }
+
 
 .card {
     flex: 0 0 100%;
@@ -63,8 +69,4 @@
         background-color: lighten($clr-transperent-light, 20%);
         padding: 0.2em 0.7em;
     }
-}
-
-.carousel__block {
-    display: flex;
 }
