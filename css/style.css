@@ -320,7 +320,11 @@ section {
   display: none;
 }
 
-.popular-tours__cards {
+.popular-tours__btn {
+  text-align: center;
+}
+
+.carousel__cards {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -328,21 +332,22 @@ section {
   width: 100%;
   overflow-x: hidden;
 }
-.popular-tours__carousel-btn {
-  width: 20%;
-  margin: auto;
-  text-align: center;
+.carousel__btns {
+  margin-block: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.popular-tours__carousel-btn > .next-btn {
-  opacity: 0.6;
+.carousel__btns > button {
+  opacity: 0.5;
   transition: all 300ms ease-in-out;
 }
-.popular-tours__carousel-btn > .next-btn:hover {
+.carousel__btns > button:hover {
   opacity: 1;
 }
-.popular-tours__btn {
-  text-align: center;
-  margin-top: 2em;
+.carousel__btns > .prev-btn {
+  transform: rotate(180deg);
 }
 
 .card {
@@ -379,10 +384,6 @@ section {
   padding: 0.2em 0.7em;
 }
 
-.carousel__block {
-  display: flex;
-}
-
 .blog {
   background-color: rgb(237, 237, 237);
 }
@@ -397,7 +398,7 @@ section {
 }
 
 .post {
-  flex-basis: 90%;
+  flex-basis: 100%;
   margin-bottom: 2em;
 }
 .post__img > img {
