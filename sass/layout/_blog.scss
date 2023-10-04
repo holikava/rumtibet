@@ -4,7 +4,7 @@
     &__posts {
         @include flex(row);
         align-items: stretch;
-        min-height: 80vh;
+        overflow: hidden;
     }
 
     &__btn {
@@ -13,7 +13,7 @@
 }
 
 .post {
-    flex-basis: 100%;
+    flex: 0 0 100%;
     margin-bottom: 2em;
 
     &__img {
@@ -23,8 +23,8 @@
     }
 
     &__info {
+        height: 250px;
         @include flex(column, center, space-between);
-        min-height: 30vh; // without this rule content jumping on the page
         padding: 1em;
         font-family: $ff-italic;
         background-color: $clr-white;

@@ -393,14 +393,14 @@ section {
   justify-content: space-between;
   align-items: center;
   align-items: stretch;
-  min-height: 80vh;
+  overflow: hidden;
 }
 .blog__btn {
   text-align: center;
 }
 
 .post {
-  flex-basis: 100%;
+  flex: 0 0 100%;
   margin-bottom: 2em;
 }
 .post__img {
@@ -409,11 +409,11 @@ section {
   border-top-left-radius: 10px;
 }
 .post__info {
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
-  min-height: 30vh;
   padding: 1em;
   font-family: "Roboto Condensed", sans-serif;
   background-color: rgb(253, 253, 253);

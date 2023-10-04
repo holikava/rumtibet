@@ -172,7 +172,6 @@ const carousel = () => {
 
 
 // start blog carousel 
-
 const posts = [
     {
         id: 1,
@@ -208,35 +207,43 @@ const posts = [
     },
 ];
 
-const btn = document.querySelector('.blog__btn button');
-btn.textContent = 'Следующая статья';
+const blogContainer = document.querySelector('.blog__posts');
 
-const container = document.querySelector('.post');
-const img = document.querySelector('.post__img');
-const title = document.querySelector('.post__title');
-const text = document.querySelector('.post__text');
-const date = document.querySelector('.post__date');
-const link = document.querySelector('.post__link');
-
-let postsIndex = 0;
-window.addEventListener('DOMContentLoaded', () => {
-    createBlogPost();
-})
-
-function createBlogPost() {
-    const post = posts[postsIndex];
-    img.src = post.img;
-    title.textContent = post.title;
-    text.textContent = post.text;
-    date.textContent = post.date;
-    link.textContent = 'читать статью';
+const showBlogPosts = (array) => {
+    let showPost = array.map((post) => {
+        return `<article class="post">
+        <img src="${post.img}" alt="beautiful veiw" class="post__img">
+        <div class="post__info">
+            <h4 class="post__title">${post.title}</h4>
+            <p class="post__text">${post.text}</p>
+            <div class="post__footer">
+                <span class="post__date">${post.date}</span>
+                <a href="${post.link}" class="post__link">читать статью</a>
+            </div>
+        </div>
+    </article>`;
+    });
+    showPost = showPost.join('');
+    blogContainer.innerHTML = showPost;
 };
 
-btn.addEventListener('click', (e) => {
-    postsIndex++;
-    if (postsIndex > posts.length - 1) {
-        postsIndex = 0;
-    }
-    createBlogPost();
-})
+showBlogPosts(posts);
 
+const blogPosts = document.querySelectorAll('.post');
+const btn = document.querySelector('.post__btn');
+
+blogPosts.forEach((post, index) => {
+    post.style.transform = `translateX(${index * 100}%)`;
+});
+
+const randomPost = (array) => {
+    let counter = Math.floor(Math.random() * array.length);
+    blogPosts.forEach((post) => {
+        post.style.transform = `translateX(-${counter * 100}%)`;
+    });
+};
+
+btn.addEventListener('click', () => {
+    randomPost(posts);
+});
+// end blog carousel 
