@@ -163,9 +163,80 @@ const carousel = () => {
     if (counter < 0) {
         counter = carouselCards.length - 1;
     };
-    
+
     carouselCards.forEach((card) => {
         card.style.transform = `translateX(-${counter * 100}%)`;
     });
 };
+// end carousel for popular-tuors section
+
+
+// start blog carousel 
+
+const posts = [
+    {
+        id: 1,
+        img: './assets/images/post-img-01.jpg',
+        title: 'Красивая Италя, какая она в реальности?',
+        text: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 2,
+        img: './assets/images/post-img-02.jpg',
+        title: 'Долой сомнения! Весь мир открыт для вас!',
+        text: 'Для современного мира  предполагает независимые способы реализации соответствующих условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 3,
+        img: './assets/images/post-img-03.jpg',
+        title: 'Как подготовиться к путешествию в одиночку?',
+        text: 'Для современного мира базовый вектор развития предполагает независимые активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 4,
+        img: './assets/images/post-img-04.jpg',
+        title: 'Индия ... летим?',
+        text: 'Для современного мира базовый вектор развития предполагает условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+];
+
+const btn = document.querySelector('.blog__btn button');
+btn.textContent = 'Следующая статья';
+
+const container = document.querySelector('.post');
+const img = document.querySelector('.post__img');
+const title = document.querySelector('.post__title');
+const text = document.querySelector('.post__text');
+const date = document.querySelector('.post__date');
+const link = document.querySelector('.post__link');
+
+let postsIndex = 0;
+window.addEventListener('DOMContentLoaded', () => {
+    createBlogPost();
+})
+
+function createBlogPost() {
+    const post = posts[postsIndex];
+    img.src = post.img;
+    title.textContent = post.title;
+    text.textContent = post.text;
+    date.textContent = post.date;
+    link.textContent = 'читать статью';
+};
+
+btn.addEventListener('click', (e) => {
+    postsIndex++;
+    if (postsIndex > posts.length - 1) {
+        postsIndex = 0;
+    }
+    createBlogPost();
+})
 
