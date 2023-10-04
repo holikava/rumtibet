@@ -3,6 +3,8 @@
 
     &__posts {
         @include flex(row);
+        align-items: stretch;
+        overflow: hidden;
     }
 
     &__btn {
@@ -11,16 +13,18 @@
 }
 
 .post {
-    flex-basis: 100%;
+    flex: 0 0 100%;
     margin-bottom: 2em;
 
-    &__img > img {
+    &__img {
         width: 100%;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
     }
 
     &__info {
+        height: 250px;
+        @include flex(column, center, space-between);
         padding: 1em;
         font-family: $ff-italic;
         background-color: $clr-white;
@@ -38,7 +42,7 @@
 
     &__footer {
         @include flex(row);
-        margin-top: 1em;
+        margin-top: auto;
     }
 
     &__date {
@@ -47,6 +51,36 @@
 
     &__link {
         color: $clr-black;
+    }
+
+    &__btn {
+        @include transition(300ms);
+        z-index: 0;
+
+        &::after {
+            content: '';
+            display: none;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-image: url(../../assets/icons/arrow-next.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-left: 0.5em;
+            visibility: hidden;
+            
+        }
+
+        &:hover::after {
+            visibility: visible;
+            display: inline-block;
+        }
+
+        &:hover {
+            padding-left: 1em;
+            padding-right: 3em;
+        }
     }
 
 }

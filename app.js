@@ -163,9 +163,87 @@ const carousel = () => {
     if (counter < 0) {
         counter = carouselCards.length - 1;
     };
-    
+
     carouselCards.forEach((card) => {
         card.style.transform = `translateX(-${counter * 100}%)`;
     });
 };
+// end carousel for popular-tuors section
 
+
+// start blog carousel 
+const posts = [
+    {
+        id: 1,
+        img: './assets/images/post-img-01.jpg',
+        title: 'Красивая Италя, какая она в реальности?',
+        text: 'Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 2,
+        img: './assets/images/post-img-02.jpg',
+        title: 'Долой сомнения! Весь мир открыт для вас!',
+        text: 'Для современного мира  предполагает независимые способы реализации соответствующих условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 3,
+        img: './assets/images/post-img-03.jpg',
+        title: 'Как подготовиться к путешествию в одиночку?',
+        text: 'Для современного мира базовый вектор развития предполагает независимые активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+    {
+        id: 4,
+        img: './assets/images/post-img-04.jpg',
+        title: 'Индия ... летим?',
+        text: 'Для современного мира базовый вектор развития предполагает условий активизации.',
+        date: '01/04/2023',
+        link: '',
+    },
+];
+
+const blogContainer = document.querySelector('.blog__posts');
+
+const showBlogPosts = (array) => {
+    let showPost = array.map((post) => {
+        return `<article class="post">
+        <img src="${post.img}" alt="beautiful veiw" class="post__img">
+        <div class="post__info">
+            <h4 class="post__title">${post.title}</h4>
+            <p class="post__text">${post.text}</p>
+            <div class="post__footer">
+                <span class="post__date">${post.date}</span>
+                <a href="${post.link}" class="post__link">читать статью</a>
+            </div>
+        </div>
+    </article>`;
+    });
+    showPost = showPost.join('');
+    blogContainer.innerHTML = showPost;
+};
+
+showBlogPosts(posts);
+
+const blogPosts = document.querySelectorAll('.post');
+const btn = document.querySelector('.post__btn');
+
+blogPosts.forEach((post, index) => {
+    post.style.transform = `translateX(${index * 100}%)`;
+});
+
+const randomPost = (array) => {
+    let counter = Math.floor(Math.random() * array.length);
+    blogPosts.forEach((post) => {
+        post.style.transform = `translateX(-${counter * 100}%)`;
+    });
+};
+
+btn.addEventListener('click', () => {
+    randomPost(posts);
+});
+// end blog carousel 
