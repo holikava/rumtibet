@@ -1,59 +1,5 @@
-// .nav {
-//     height: 15vh;
-
-//     &__header {
-//         @include flex(row);
-//         height: inherit;
-//     }
-
-//     &__list {
-//         display: none;
-//         position: absolute;
-//         left: 0;
-//         right: 0;
-//         min-height: 80vh;
-//         padding-block: 2em;
-//         z-index: 1000;
-//     }
-
-//     &__link {
-//         color: $clr-white;
-//         height: 10vh;
-//         padding-block: 0.5em;
-//         line-height: 1;
-//         @include transition(200ms);
-
-//         &::before {
-//             content: "";
-//             display: inline-block;
-//             vertical-align: middle;
-//             width: 26px;
-//             height: 26px;
-//             margin-right: 0.5em;
-//             margin-left: 1em;
-//             transform: scale(0.);
-//             background-image: url(../assets/icons/arrow-white.png);
-//         }
-
-//         &:hover {
-//             color: $clr-primary;
-
-//             &::before {
-//                 background-image: url(/assets/icons/arrow-color.png);
-//             }
-//         }
-//     }
-
-//     &__btn {
-//         margin-top: 1em;
-//         margin-left: 1em;
-//     }
-// }
-
-// use js, showing navigation links
-
 .nav {
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -87,6 +33,7 @@
 
 .fixed-nav {
     position: fixed;
+    z-index: 100;
 }
 
 .fixed-nav .nav-links {

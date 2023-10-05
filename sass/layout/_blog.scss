@@ -23,7 +23,7 @@
     }
 
     &__info {
-        height: 250px;
+        height: 220px;
         @include flex(column, center, space-between);
         padding: 1em;
         font-family: $ff-italic;
@@ -55,7 +55,6 @@
 
     &__btn {
         @include transition(300ms);
-        z-index: 0;
 
         &::after {
             content: '';
@@ -63,7 +62,7 @@
             position: absolute;
             width: 24px;
             height: 24px;
-            background-image: url(../../assets/icons/arrow-next.png);
+            background-image: url(../assets/icons/arrow-next.png);
             background-position: center;
             background-repeat: no-repeat;
             vertical-align: middle;

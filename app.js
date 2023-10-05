@@ -237,7 +237,7 @@ blogPosts.forEach((post, index) => {
 });
 
 const randomPost = (array) => {
-    let counter = Math.floor(Math.random() * array.length);
+    let counter = getRandomNumber(array);
     blogPosts.forEach((post) => {
         post.style.transform = `translateX(-${counter * 100}%)`;
     });
@@ -246,4 +246,54 @@ const randomPost = (array) => {
 btn.addEventListener('click', () => {
     randomPost(posts);
 });
+
+const getRandomNumber = (array) => {
+    return Math.floor(Math.random() * array.length);
+}
 // end blog carousel 
+
+
+// gallery section
+
+const galleryImages = [
+    './assets/images/gallery-01.jpg',
+    './assets/images/gallery-02.jpg',
+    './assets/images/gallery-03.jpg',
+    './assets/images/gallery-04.jpg',
+    './assets/images/gallery-05.jpg',
+    './assets/images/gallery-06.jpg',
+]
+
+const imagesContainer = document.querySelector('.gallery__images');
+const galleryBtn = document.querySelector('.btn-start');
+const stopBtn = document.querySelector('.btn-stop');
+
+let imageIndex = 0;
+
+const displayImage = () => {
+    if (imageIndex > galleryImages.length - 1) {
+        imageIndex = 0;
+    }
+    imagesContainer.innerHTML = `<img src="${galleryImages[imageIndex]}" alt="beautiful veiw">`;
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    displayImage();
+});
+
+let displayInterval;
+
+galleryBtn.addEventListener('click', () => {
+    displayInterval = setInterval(() => {
+        imageIndex++;
+        displayImage()
+    }, 2000);
+    galleryBtn.style.display = 'none';
+    stopBtn.style.display = 'block';
+});
+
+stopBtn.addEventListener('click', () => {
+    clearInterval(displayInterval);
+    stopBtn.style.display = 'none';
+    galleryBtn.style.display = 'block';
+})
