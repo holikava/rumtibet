@@ -119,6 +119,8 @@ const tours = [
 ];
 
 const cardsContainer = document.querySelector('.carousel__cards');
+const carouselBtn = document.querySelector('.popular-tours__btn button');
+const dotsContainer = document.querySelector('.carousel__dots');
 
 const displayCards = (cards) => {
     let displayCard = cards.map((card) => {
@@ -137,26 +139,36 @@ const displayCards = (cards) => {
 
 displayCards(tours);
 
+const displayDots = () => {
+    let displayDot = tours.map((tour) => {
+        return `<div class="dot"></div>`;
+    }).join('');
+    dotsContainer.innerHTML = displayDot;
+};
+
+displayDots();
+
 const carouselCards = document.querySelectorAll('.card');
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
+const carouselDots = document.querySelectorAll('.dot');
+
+const clearDots = () => {
+    carouselDots.forEach((dot) => {
+        dot.style.opacity = '0.4';
+    })
+};
+
+let counter = 0;
+carouselBtn.addEventListener('click', () => {
+    clearDots();
+    counter++;
+    carousel();
+});
 
 carouselCards.forEach((card, index) => {
     card.style.transform = `translateX(${index * 100}%)`;
 });
 
-let counter = 0;
-nextBtn.addEventListener('click', () => {
-    counter++;
-    carousel();
-});
-
-prevBtn.addEventListener('click', () => {
-    counter--;
-    carousel();
-});
-
-const carousel = () => {
+const carousel = (e) => {
     if (counter === carouselCards.length) {
         counter = 0;
     };
@@ -167,6 +179,9 @@ const carousel = () => {
     carouselCards.forEach((card) => {
         card.style.transform = `translateX(-${counter * 100}%)`;
     });
+
+    let dot = carouselDots[counter];
+    dot.style.opacity = '1';
 };
 // end carousel for popular-tuors section
 
@@ -254,7 +269,6 @@ const getRandomNumber = (array) => {
 
 
 // gallery section
-
 const galleryImages = [
     './assets/images/gallery-01.jpg',
     './assets/images/gallery-02.jpg',
@@ -296,4 +310,5 @@ stopBtn.addEventListener('click', () => {
     clearInterval(displayInterval);
     stopBtn.style.display = 'none';
     galleryBtn.style.display = 'block';
-})
+});
+// gallery section end
