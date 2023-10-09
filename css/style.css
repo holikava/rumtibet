@@ -340,15 +340,23 @@ section {
   justify-content: space-between;
   align-items: center;
 }
-.carousel__btns > button {
-  opacity: 0.5;
-  transition: all 300ms ease-in-out;
+
+.carousel__dots {
+  text-align: center;
+  margin-block: 1em;
 }
-.carousel__btns > button:hover {
-  opacity: 1;
+.carousel__dots > * + * {
+  margin-left: 5vw;
 }
-.carousel__btns > .prev-btn {
-  transform: rotate(180deg);
+
+.dot {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: rgb(135, 135, 135);
+  border-radius: 50%;
+  opacity: 0.4;
 }
 
 .card {

@@ -16,22 +16,27 @@
     &__btns {
         margin-block: 1em;
         @include flex(row);
-
-        &> button {
-            opacity: 0.5;
-            @include transition(300ms);
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-
-        &>.prev-btn {
-            transform: rotate(180deg);
-        }
     }
 }
 
+.carousel__dots {
+    text-align: center;
+    margin-block: 1em;
+
+    &>*+* {
+        margin-left: 5vw;
+    }
+}
+
+.dot {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: $clr-gray;
+    border-radius: 50%;
+    opacity: 0.4;
+}
 
 .card {
     flex: 0 0 100%;
