@@ -79,17 +79,17 @@ scrollLinks.forEach((link) => {
 
 // loading video on about-us section
 const parentContainer = document.querySelector('.video');
-const playBtn = document.querySelector('.video__play-btn');
+const playBtn = document.querySelector('.play-btn');
 const videoContainer = document.querySelector('.video__container');
 
 playBtn.addEventListener('click', () => {
-    videoContainer.classList.add('show-video');
-    parentContainer.style.position = 'relative';
+    parentContainer.style.display = 'block';
+    playBtn.style.display = 'none';
 });
 
 videoContainer.addEventListener('click', () => {
-    videoContainer.classList.remove('show-video');
-    parentContainer.style.position = 'static';
+    parentContainer.style.display = 'none';
+    playBtn.style.display = 'block';
 })
 
 
@@ -122,6 +122,12 @@ const cardsContainer = document.querySelector('.carousel__cards');
 const carouselBtn = document.querySelector('.popular-tours__btn button');
 const dotsContainer = document.querySelector('.carousel__dots');
 
+window.addEventListener('DOMContentLoaded', () => {
+    displayCards(tours);
+    displayCarouselDots();
+    colorDotsIndicator();
+})
+
 const displayCards = (cards) => {
     let displayCard = cards.map((card) => {
         return `<div class="card">
@@ -137,38 +143,41 @@ const displayCards = (cards) => {
     cardsContainer.innerHTML = displayCard;
 };
 
-displayCards(tours);
-
-const displayDots = () => {
+const displayCarouselDots = () => {
     let displayDot = tours.map((tour) => {
         return `<div class="dot"></div>`;
     }).join('');
     dotsContainer.innerHTML = displayDot;
 };
 
-displayDots();
+const carouselCards = cardsContainer.childNodes;
+const carouselDots = dotsContainer.childNodes;
 
-const carouselCards = document.querySelectorAll('.card');
-const carouselDots = document.querySelectorAll('.dot');
+let counter = 0;
 
-const clearDots = () => {
+const colorDotsIndicator = () => {
+    if (counter === carouselCards.length) {
+        counter = 0;
+    };
+    if (counter < 0) {
+        counter = carouselCards.length - 1;
+    };
+
+    let dot = carouselDots[counter];
+    dot.style.opacity = '1';
+};
+
+const clearDotsIndicator = () => {
     carouselDots.forEach((dot) => {
         dot.style.opacity = '0.4';
     })
 };
 
-let counter = 0;
-carouselBtn.addEventListener('click', () => {
-    clearDots();
-    counter++;
-    carousel();
-});
-
 carouselCards.forEach((card, index) => {
     card.style.transform = `translateX(${index * 100}%)`;
 });
 
-const carousel = (e) => {
+const carousel = () => {
     if (counter === carouselCards.length) {
         counter = 0;
     };
@@ -179,10 +188,14 @@ const carousel = (e) => {
     carouselCards.forEach((card) => {
         card.style.transform = `translateX(-${counter * 100}%)`;
     });
-
-    let dot = carouselDots[counter];
-    dot.style.opacity = '1';
 };
+
+carouselBtn.addEventListener('click', () => {
+    clearDotsIndicator();
+    counter++;
+    colorDotsIndicator();
+    carousel();
+});
 // end carousel for popular-tuors section
 
 
