@@ -237,9 +237,6 @@ section {
   display: none;
 }
 
-.about-us {
-  background-color: transparent;
-}
 .about-us__content {
   display: flex;
   flex-direction: column;
@@ -247,10 +244,27 @@ section {
   align-items: center;
 }
 .about-us__images {
+  position: relative;
   order: 2;
+}
+.about-us__images > img {
+  border-radius: 10px;
+  margin: 0 auto;
 }
 .about-us__images > img:last-of-type {
   display: none;
+}
+.about-us__images > .play-btn {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  display: block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: url(../assets/icons/play-btn.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .about-us__text {
   order: 1;
@@ -261,12 +275,7 @@ section {
 }
 
 .video {
-  display: flex;
-  width: 90vw;
-  height: 400px;
-  background-image: url(../assets/images/about-img-01.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
+  display: none;
 }
 .video__container {
   position: absolute;
@@ -276,23 +285,7 @@ section {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  z-index: -1;
-  visibility: hidden;
-}
-.video__play-btn {
-  display: block;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  background: url(../assets/icons/play-btn.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: auto;
-}
-
-.show-video {
-  visibility: visible;
-  z-index: 100;
+  border-radius: 10px;
 }
 
 .offers {
