@@ -2,18 +2,21 @@
 const navToggle = document.querySelector('.toggle-menu');
 const linksContainer = document.querySelector('.nav__links');
 const navLinksList = document.querySelector('.nav__list');
+const navBar = document.querySelector('.nav');
 
 // show links
 navToggle.addEventListener('click', () => {
     const containerHeight = linksContainer.getBoundingClientRect().height;
-    const linksHeight = navLinksList.getBoundingClientRect().height;
+    // const linksHeight = navLinksList.getBoundingClientRect().height;
 
     if (containerHeight === 0) {
-        linksContainer.style.height = `${linksHeight}px`;
+        // linksContainer.style.height = `${linksHeight}px`;
+        linksContainer.style.height = '80vh';
         navToggle.style.transform = 'rotate(90deg)';
     } else {
         linksContainer.style.height = 0;
         navToggle.style.transform = 'none';
+
     };
 
     // close nav if click on page (not on nav)
@@ -29,7 +32,6 @@ navToggle.addEventListener('click', () => {
 
 // scroll to links
 const scrollLinks = document.querySelectorAll('.nav__link');
-const navBar = document.querySelector('.nav');
 const topLink = document.querySelector('.top-link');
 
 window.addEventListener('scroll', () => {

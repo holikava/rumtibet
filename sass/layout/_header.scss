@@ -1,19 +1,29 @@
 .nav {
-    padding: 0.2rem 1rem;
+    padding: 0 1rem;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $clr-transperent;
 
     &__header {
         @include flex(row);
     }
 
     &__links {
+        position: absolute;
+        left: 0;
+        width: 100%;
         height: 0;
+        display: grid;
+        place-content: center;
+        text-align: center;
         overflow: hidden;
         @include transition(300ms);
+        background-color: $clr-transperent;
+    }
+
+    &__list {
+        margin-bottom: 2em;
     }
 
     &__link {
@@ -34,11 +44,14 @@
 .fixed-nav {
     position: fixed;
     z-index: 100;
+    background-color: $clr-transperent;
 }
 
 .fixed-nav .nav-links {
     height: auto !important;
 }
+
+
 
 // ************ toggle icon
 .toggle-menu {
