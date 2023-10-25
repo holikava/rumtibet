@@ -4,7 +4,7 @@
     &__posts {
         @include flex(row);
         align-items: stretch;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     &__btn {
@@ -23,7 +23,6 @@
     }
 
     &__info {
-        height: 220px;
         @include flex(column, center, space-between);
         padding: 1em;
         font-family: $ff-italic;
@@ -81,5 +80,4 @@
             padding-right: 3em;
         }
     }
-
 }

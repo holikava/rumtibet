@@ -175,6 +175,13 @@ const clearDotsIndicator = () => {
     })
 };
 
+carouselBtn.addEventListener('click', () => {
+    clearDotsIndicator();
+    counter++;
+    colorDotsIndicator();
+    carousel();
+});
+
 carouselCards.forEach((card, index) => {
     card.style.transform = `translateX(${index * 100}%)`;
 });
@@ -187,17 +194,12 @@ const carousel = () => {
         counter = carouselCards.length - 1;
     };
 
-    carouselCards.forEach((card) => {
+
+    carouselCards.forEach((card, index) => {
         card.style.transform = `translateX(-${counter * 100}%)`;
     });
 };
 
-carouselBtn.addEventListener('click', () => {
-    clearDotsIndicator();
-    counter++;
-    colorDotsIndicator();
-    carousel();
-});
 // end carousel for popular-tuors section
 
 

@@ -23,14 +23,14 @@
     }
 
     &__list {
-        margin-bottom: 2em;
+        margin-bottom: 1em;
     }
 
     &__link {
         color: $clr-white;
-        padding: 1rem 0;
         font-family: $ff-italic;
         text-transform: uppercase;
+        padding: 0.8em 0;
         letter-spacing: 0.1em;
         text-shadow: 1px 1px 3px $clr-gray;
         @include transition(300ms);

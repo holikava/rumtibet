@@ -69,16 +69,10 @@
   
   .container {
     width: 90%;
-    max-width: 1400px;
+    max-width: 500px;
     margin: 0 auto;
   }
 
   section {
     padding-block: 2em;
-  }
-
-  @media screen and (max-width: 600px) {
-    :root {
-      font-size: 13px;
-    }
   }
